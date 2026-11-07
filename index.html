@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Mario Alvarez — Desarrollador de sistemas</title>
-<link rel="icon" href="assets/img/favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script src="./vendor/react.js"></script>
 <script src="./vendor/react-dom.js"></script>
 <script src="./support.js"></script>
@@ -371,7 +371,9 @@ a{color:#34D399}a:hover{color:#6EE7B7}
 
   <sc-if value="{{zoom}}" hint-placeholder-val="{{false}}">
     <div class="lightbox" role="dialog" aria-modal="true" aria-label="{{zoomAlt}}" onClick="{{closeZoom}}" style="position: fixed; inset: 0; z-index: 100; box-sizing: border-box; padding: clamp(16px, 4vw, 48px); background: rgba(5, 12, 22, 0.9); display: flex; align-items: center; justify-content: center; cursor: zoom-out">
-      <img class="lb-img" src="{{zoomSrc}}" alt="{{zoomAlt}}" style="max-width: 100%; max-height: 100%; border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); display: block">
+      <sc-if value="{{zErp}}" hint-placeholder-val="{{false}}"><img class="lb-img" src="./assets/0f039bc3bb2e1b4c0b2c4a3ab2bcf4c4.jpg" alt="{{t.erpAlt}}" style="max-width: 100%; max-height: 100%; border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); display: block"></sc-if>
+      <sc-if value="{{zThor}}" hint-placeholder-val="{{false}}"><img class="lb-img" src="./assets/625ee54e1b28c452271138215a434826.jpg" alt="{{t.thorAlt}}" style="max-width: 100%; max-height: 100%; border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); display: block"></sc-if>
+      <sc-if value="{{zCel}}" hint-placeholder-val="{{false}}"><img class="lb-img" src="./assets/9e4fbc0327805727b09b0987831b6b7e.jpg" alt="{{t.celAlt}}" style="max-width: 100%; max-height: 100%; border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); display: block"></sc-if>
       <button type="button" class="lb-close" aria-label="{{t.zoomClose}}" onClick="{{closeZoom}}" style="position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #2B4058; background: #0F2036; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
     </div>
   </sc-if>
@@ -572,7 +574,7 @@ class Component extends DCLogic {
     if (!this._setChart) this._setChart = function (n) { self._chartEl = n; };
     var chartCls = (this.state && this.state.chartOn) ? 'bars run' : 'bars';
     var navCls = (this.state && this.state.chartOn) ? 'mnav run' : 'mnav';
-    return { setChart: this._setChart, chartCls: chartCls, navCls: navCls, accent: accent, lang: lang, t: t, langs: langs, langX: langX, steps: steps, sent: sent, notSent: !sent, err: !!st.err, submit: submit, reset: reset, formOpen: formOpen, toggleForm: toggleForm, zoom: zoom, openZoomErp: openZoomErp, openZoomThor: openZoomThor, openZoomCel: openZoomCel, closeZoom: closeZoom, zoomSrc: zInfo.src, zoomAlt: zInfo.alt, formExp: formOpen ? 'true' : 'false', formWrapCls: formOpen ? 'open' : '', chevCls: formOpen ? 'open' : '' };
+    return { setChart: this._setChart, chartCls: chartCls, navCls: navCls, accent: accent, lang: lang, t: t, langs: langs, langX: langX, steps: steps, sent: sent, notSent: !sent, err: !!st.err, submit: submit, reset: reset, formOpen: formOpen, toggleForm: toggleForm, zoom: zoom, openZoomErp: openZoomErp, openZoomThor: openZoomThor, openZoomCel: openZoomCel, zErp: zoomKey === 'erp', zThor: zoomKey === 'thor', zCel: zoomKey === 'cel', closeZoom: closeZoom, zoomSrc: zInfo.src, zoomAlt: zInfo.alt, formExp: formOpen ? 'true' : 'false', formWrapCls: formOpen ? 'open' : '', chevCls: formOpen ? 'open' : '' };
   }
 }
 </script>
