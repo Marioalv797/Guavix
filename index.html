@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Mario Alvarez — Desarrollador de sistemas</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#0A1628}
+section[id]{scroll-margin-top:24px}
+a{color:#34D399}a:hover{color:#6EE7B7}
+.shot{position:relative;overflow:hidden;cursor:default;transform:perspective(1200px) translateY(0) rotateX(0) scale(1);transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s cubic-bezier(.22,1,.36,1),border-color .3s ease}
+.shot:hover{transform:perspective(1200px) translateY(-8px) rotateX(3deg) scale(1.02);box-shadow:0 24px 60px rgba(0,0,0,.5),0 0 0 1px var(--acc);border-color:var(--acc) !important}
+.lang-btn{transition:background-color .2s ease,color .3s ease}
+.lang-pill{transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.bars .bar{transform-origin:50% 100%}
+.bars.run .bar{animation:barCalc 3.2s cubic-bezier(.45,0,.55,1) both}
+@keyframes barCalc{0%{transform:scaleY(1)}16%{transform:scaleY(var(--a))}32%{transform:scaleY(var(--b))}48%{transform:scaleY(var(--c))}64%{transform:scaleY(var(--d))}82%{transform:scaleY(var(--e))}100%{transform:scaleY(1)}}
+.mnav.run .nav-hl{animation:navWalk 3.4s ease-in-out both}
+.nav-hl{transition:opacity .2s ease}
+.mrow{transition:background-color .2s ease}
+.mrow > div{transition:background-color .2s ease}
+.mrow:hover{background-color:rgba(16,185,129,.16)}
+.mrow:hover > div{background-color:var(--acc) !important}
+.mnav:has(.mrow:hover) .nav-hl{opacity:0}
+.bar{transition:background-color .2s ease,filter .2s ease}
+.bar:hover{background-color:var(--acc) !important;filter:brightness(1.12)}
+.dots > span{transition:background-color .2s ease}
+.dots:hover .d1{background-color:#FF5F57 !important}
+.dots:hover .d2{background-color:#FEBC2E !important}
+.dots:hover .d3{background-color:#28C840 !important}
+@keyframes navWalk{0%{transform:translateY(0)}10%{transform:translateY(26px)}22%{transform:translateY(26px)}32%{transform:translateY(52px)}44%{transform:translateY(52px)}54%{transform:translateY(104px)}66%{transform:translateY(104px)}74%{transform:translateY(78px)}84%{transform:translateY(78px)}94%,100%{transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){.bars.run .bar,.mnav.run .nav-hl{animation:none}}
+.step-fill{transition:width .55s cubic-bezier(.22,1,.36,1)}
+.step:hover .step-fill{width:100% !important}
+.steps:has(.step:hover) .step:not(:hover) .step-fill{width:0 !important}
+@media (prefers-reduced-motion: reduce){.step-fill{transition:none}}
+.title-line{transition:width .35s cubic-bezier(.22,1,.36,1)}
+.ttl:hover .title-line{width:100% !important}
+@media (prefers-reduced-motion: reduce){.title-line{transition:none}}@media (prefers-reduced-motion: reduce){.lang-pill{transition:none}}
+.lang-btn:hover{color:#FFFFFF}
+.svc{transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s cubic-bezier(.22,1,.36,1),border-color .3s ease,background-color .3s ease}
+.svc svg{transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.svc:hover{transform:translateY(-8px);background-color:#12294A !important;border-color:var(--acc) !important;box-shadow:0 22px 48px rgba(0,0,0,.45)}
+.svc:hover svg{transform:translateY(-3px) scale(1.12)}
+.btn-pri{transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s ease,filter .2s ease}
+.btn-pri:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px color-mix(in srgb,var(--acc) 70%,transparent);filter:brightness(1.07)}
+.btn-pri:active{transform:translateY(0) scale(.98)}
+.btn-sec{transition:transform .25s cubic-bezier(.22,1,.36,1),border-color .2s ease,background-color .2s ease}
+.btn-sec:hover{transform:translateY(-2px);border-color:var(--acc) !important;background-color:color-mix(in srgb,var(--acc) 12%,transparent) !important}
+.btn-sec:active{transform:translateY(0) scale(.98)}
+.nav-link{text-decoration:none;background-image:linear-gradient(var(--acc),var(--acc));background-repeat:no-repeat;background-origin:content-box;background-size:0% 2px;background-position:50% calc(100% + 4px);transition:background-size .3s cubic-bezier(.22,1,.36,1),color .2s ease}
+.nav-link:hover{color:#FFFFFF !important;background-size:100% 2px}
+.lang-btn[aria-pressed="false"]:hover{background:#17304D !important}
+@media (prefers-reduced-motion: reduce){.btn-pri,.btn-sec,.nav-link{transition:none}.btn-pri:hover,.btn-sec:hover,.btn-pri:active,.btn-sec:active{transform:none}}
+.btn-cta,.btn-cta-out{transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s ease,background-color .2s ease,color .2s ease}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px rgba(6,32,22,.6)}
+.btn-cta-out:hover{transform:translateY(-2px);background-color:#0A1628 !important;color:#FFFFFF !important}
+.btn-cta:active,.btn-cta-out:active{transform:translateY(0) scale(.98)}
+@media (prefers-reduced-motion: reduce){.btn-cta:hover,.btn-cta-out:hover,.btn-cta:active,.btn-cta-out:active{transform:none}}
+.lightbox{animation:lbIn .3s ease both}
+.lb-img{animation:lbImg .45s cubic-bezier(.22,1,.36,1) both}
+@keyframes lbIn{from{opacity:0}to{opacity:1}}
+@keyframes lbImg{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+.lb-close{transition:background-color .2s ease,border-color .2s ease}
+.lb-close:hover{background-color:#17304D !important;border-color:var(--acc) !important}
+@media (prefers-reduced-motion: reduce){.lightbox,.lb-img{animation:none}}
+.chev{transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.chev.open{transform:rotate(180deg)}
+.cform-wrap{transition:grid-template-rows .6s cubic-bezier(.22,1,.36,1),margin-top .6s cubic-bezier(.22,1,.36,1)}
+.cform-wrap.open{grid-template-rows:1fr !important;margin-top:0 !important}
+.cform{opacity:0;transform:translateY(-14px);visibility:hidden;transition:opacity .3s ease,transform .5s cubic-bezier(.22,1,.36,1),visibility 0s linear .6s}
+.cform-wrap.open .cform{opacity:1;transform:none;visibility:visible;transition:opacity .45s ease .12s,transform .6s cubic-bezier(.22,1,.36,1),visibility 0s}
+@media (prefers-reduced-motion: reduce){.cform-wrap,.cform,.cform-wrap.open .cform{transition:none}.chev{transition:none}}
+.fld{transition:border-color .2s ease,box-shadow .2s ease}
+.fld::placeholder{color:#7C8FA4}
+.fld:focus{outline:none;border-color:var(--acc) !important;box-shadow:0 0 0 3px rgba(16,185,129,.25)}
+.send{transition:transform .2s ease,filter .2s ease}
+.send:hover{filter:brightness(1.08)}
+.send:active{transform:scale(.98)}
+.photo-frame{transition:transform .55s cubic-bezier(.22,1,.36,1)}
+.photo-img{transition:transform .55s cubic-bezier(.22,1,.36,1),box-shadow .55s cubic-bezier(.22,1,.36,1),border-color .3s ease}
+.photo-zoom{transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.photo:hover .photo-frame{transform:translate(-10px,-10px)}
+.photo:hover .photo-img{transform:translate(4px,4px) rotate(-1.5deg);box-shadow:0 26px 56px rgba(0,0,0,.5);border-color:var(--acc) !important}
+.photo:hover .photo-zoom{transform:scale(1.06)}
+.photo-alt{opacity:0;transition:opacity .45s ease}
+.photo:hover .photo-alt{opacity:1}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.shot{transition:border-color .2s ease}.shot:hover{transform:none}.photo-frame,.photo-img,.photo-zoom,.svc,.svc svg{transition:border-color .2s ease}.svc:hover,.svc:hover svg{transform:none}.photo:hover .photo-frame,.photo:hover .photo-img,.photo:hover .photo-zoom{transform:none}}
+</style>
+</helmet>
+<div lang="{{lang}}" style="--acc: {{accent}}; background: #0A1628; color: #E8EEF5; font-family: Inter, system-ui, sans-serif; min-height: 100vh">
+
+  <header style="max-width: 1200px; margin: 0 auto; padding: 24px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+    <a href="#inicio" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.5px; color: #FFFFFF; text-decoration: none">guavix<span style="color: {{accent}}">.</span></a>
+    <nav aria-label="{{t.navAria}}" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+      <a href="#servicios" class="nav-link" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navServ}}</a>
+      <a href="#proyectos" class="nav-link" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navProj}}</a>
+      <a href="#proceso" class="nav-link" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navProc}}</a>
+      <a href="#sobre-mi" class="nav-link" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navAbout}}</a>
+      <div role="group" aria-label="{{t.langAria}}" style="position: relative; display: flex; gap: 2px; background: #0F2036; border: 1px solid #1F3550; border-radius: 10px; padding: 3px; margin: 0 4px">
+        <span class="lang-pill" aria-hidden="true" style="position: absolute; top: 3px; left: 3px; width: 44px; height: 40px; border-radius: 8px; background: {{accent}}; transform: {{langX}}"></span>
+        <sc-for list="{{langs}}" as="l" hint-placeholder-count="3">
+          <button type="button" class="lang-btn" aria-pressed="{{l.pressed}}" aria-label="{{l.name}}" onClick="{{l.pick}}" style="position: relative; z-index: 1; width: 44px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: {{l.color}}; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; cursor: pointer">{{l.code}}</button>
+        </sc-for>
+      </div>
+      <a href="#contacto" class="btn-pri" style="background: {{accent}}; color: #062016; text-decoration: none; font-size: 15px; font-weight: 600; padding: 12px 20px; border-radius: 10px">{{t.navTalk}}</a>
+    </nav>
+  </header>
+
+  <section id="inicio" style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 96px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+    <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+      <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{accent}}">{{t.kicker}}</p>
+      <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(40px, 5.4vw, 66px); line-height: 1.04; letter-spacing: -1.5px; color: #FFFFFF">{{t.h1}}</h1>
+      <p style="margin: 0; font-size: 19px; line-height: 1.6; color: #B4C2D1; max-width: 560px">{{t.lead}}</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px">
+        <a href="#proyectos" class="btn-pri" style="background: {{accent}}; color: #062016; text-decoration: none; font-weight: 600; font-size: 16px; padding: 15px 26px; border-radius: 12px">{{t.btnProj}}</a>
+        <a href="#contacto" class="btn-sec" style="border: 1px solid #2B4058; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 16px; padding: 14px 26px; border-radius: 12px">{{t.btnQuote}}</a>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding-top: 4px">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8EA0B4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"></path></svg>
+        <span style="font-size: 14px; color: #8EA0B4">{{t.langLabel}}</span>
+        <span lang="es" style="font-size: 14px; color: #E8EEF5; background: #10233B; border: 1px solid #1F3550; padding: 6px 12px; border-radius: 999px">Español</span>
+        <span lang="en" style="font-size: 14px; color: #E8EEF5; background: #10233B; border: 1px solid #1F3550; padding: 6px 12px; border-radius: 999px">English</span>
+        <span lang="pt" style="font-size: 14px; color: #E8EEF5; background: #10233B; border: 1px solid #1F3550; padding: 6px 12px; border-radius: 999px">Português</span>
+      </div>
+    </div>
+
+    <div aria-hidden="true" style="flex: 1 1 440px; min-width: 0; background: #0F2036; border: 1px solid #1F3550; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.45)">
+      <div style="display: flex; gap: 8px; align-items: center; padding: 14px 16px; border-bottom: 1px solid #1F3550">
+        <span class="dots" style="display: flex; gap: 8px; padding: 4px; margin: -4px">
+          <span class="d1" style="width: 11px; height: 11px; border-radius: 50%; background: #3A4F68"></span>
+          <span class="d2" style="width: 11px; height: 11px; border-radius: 50%; background: #3A4F68"></span>
+          <span class="d3" style="width: 11px; height: 11px; border-radius: 50%; background: #3A4F68"></span>
+        </span>
+        <span style="margin-left: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8EA0B4">{{t.mockUrl}}</span>
+      </div>
+      <div style="display: flex; min-height: 320px">
+        <div style="width: 30%; background: #0B1A2D; padding: 18px 14px; display: flex; flex-direction: column; gap: 10px">
+          <div style="height: 10px; width: 70%; background: {{accent}}; border-radius: 4px"></div>
+          <div class="{{navCls}}" style="position: relative; margin-top: 6px; display: flex; flex-direction: column; gap: 4px">
+            <div class="nav-hl" style="position: absolute; top: 0; left: -6px; right: -6px; height: 22px; border-radius: 6px; background: rgba(16,185,129,0.16)"></div>
+            <div class="mrow" style="position: relative; height: 22px; margin: 0 -6px; padding: 0 6px; border-radius: 6px; display: flex; align-items: center"><div style="height: 8px; width: 85%; background: #24384F; border-radius: 4px"></div></div>
+            <div class="mrow" style="position: relative; height: 22px; margin: 0 -6px; padding: 0 6px; border-radius: 6px; display: flex; align-items: center"><div style="height: 8px; width: 60%; background: #24384F; border-radius: 4px"></div></div>
+            <div class="mrow" style="position: relative; height: 22px; margin: 0 -6px; padding: 0 6px; border-radius: 6px; display: flex; align-items: center"><div style="height: 8px; width: 75%; background: #24384F; border-radius: 4px"></div></div>
+            <div class="mrow" style="position: relative; height: 22px; margin: 0 -6px; padding: 0 6px; border-radius: 6px; display: flex; align-items: center"><div style="height: 8px; width: 55%; background: #24384F; border-radius: 4px"></div></div>
+            <div class="mrow" style="position: relative; height: 22px; margin: 0 -6px; padding: 0 6px; border-radius: 6px; display: flex; align-items: center"><div style="height: 8px; width: 80%; background: #24384F; border-radius: 4px"></div></div>
+          </div>
+        </div>
+        <div style="flex: 1; padding: 18px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+            <div style="background: #142944; border-radius: 10px; height: 62px"></div>
+            <div style="background: #142944; border-radius: 10px; height: 62px"></div>
+            <div style="background: #142944; border-radius: 10px; height: 62px"></div>
+          </div>
+          <div ref="{{setChart}}" class="{{chartCls}}" style="background: #142944; border-radius: 10px; height: 110px; display: flex; align-items: flex-end; gap: 8px; padding: 14px">
+            <div class="bar" style="--a: 2.2; --b: .6; --c: 1.8; --d: .9; --e: 1.3; flex: 1; height: 40%; background: #2B4A6E; border-radius: 4px"></div>
+            <div class="bar" style="--a: .5; --b: 1.5; --c: .8; --d: 1.4; --e: .85; flex: 1; height: 62%; background: #2B4A6E; border-radius: 4px; animation-delay: .08s"></div>
+            <div class="bar" style="--a: 1.8; --b: .7; --c: 1.9; --d: .6; --e: 1.15; flex: 1; height: 50%; background: #2B4A6E; border-radius: 4px; animation-delay: .16s"></div>
+            <div class="bar" style="--a: .6; --b: 1.2; --c: .5; --d: 1.25; --e: .9; flex: 1; height: 78%; background: #2B4A6E; border-radius: 4px; animation-delay: .24s"></div>
+            <div class="bar" style="--a: .55; --b: 1.05; --c: .7; --d: 1.08; --e: .95; flex: 1; height: 92%; background: {{accent}}; border-radius: 4px; animation-delay: .32s"></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <div style="height: 9px; background: #1D3350; border-radius: 4px"></div>
+            <div style="height: 9px; width: 88%; background: #1D3350; border-radius: 4px"></div>
+            <div style="height: 9px; width: 94%; background: #1D3350; border-radius: 4px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" style="background: #0D1D33; border-top: 1px solid #172B44; border-bottom: 1px solid #172B44">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
+        <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{accent}}">{{t.servK}}</p>
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.15; letter-spacing: -0.8px; color: #FFFFFF">{{t.servH}}</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+        <div class="svc" style="--acc: {{accent}}; background: #10233B; border: 1px solid #1F3550; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; color: #FFFFFF">{{t.s1t}}</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B4C2D1">{{t.s1d}}</p>
+        </div>
+        <div class="svc" style="--acc: {{accent}}; background: #10233B; border: 1px solid #1F3550; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M3 9h18"></path><path d="M8 21h8"></path></svg>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; color: #FFFFFF">{{t.s2t}}</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B4C2D1">{{t.s2d}}</p>
+        </div>
+        <div class="svc" style="--acc: {{accent}}; background: #10233B; border: 1px solid #1F3550; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h5a2 2 0 0 1 2 2v5"></path><path d="M21 3l-9 9"></path><path d="M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"></path></svg>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; color: #FFFFFF">{{t.s3t}}</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B4C2D1">{{t.s3d}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
+      <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{accent}}">{{t.projK}}</p>
+      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.15; letter-spacing: -0.8px; color: #FFFFFF">{{t.projH}}</h2>
+    </div>
+
+    <article style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; background: #0F2036; border: 1px solid #1F3550; border-radius: 20px; padding: 32px">
+      <button type="button" class="shot" aria-label="{{t.zoomOpen}}" onClick="{{openZoomErp}}" style="--acc: {{accent}}; flex: 1 1 420px; min-width: 0; aspect-ratio: 1920 / 914; padding: 0; background: #F5F7FD; border-radius: 12px; border: 1px solid #1F3550; display: block; cursor: zoom-in">
+        <img src="./assets/0f039bc3bb2e1b4c0b2c4a3ab2bcf4c4.jpg" alt="{{t.erpAlt}}" style="width: 100%; height: 100%; object-fit: cover; display: block">
+      </button>
+      <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div class="ttl" style="align-self: flex-start; display: flex; flex-direction: column; align-items: center; gap: 2px">
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 30px; line-height: 34px; color: #FFFFFF">Barreiros</h3>
+          <span class="title-line" aria-hidden="true" style="display: block; width: 64px; height: 0; border-top: 2px solid {{accent}}; border-radius: 2px"></span>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #B4C2D1">{{t.erpD}}</p>
+        <ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: #C5D1DE">
+          <sc-for list="{{t.erpB}}" as="b" hint-placeholder-count="3"><li>{{b}}</li></sc-for>
+        </ul>
+      </div>
+    </article>
+
+    <article style="display: flex; flex-wrap: wrap-reverse; gap: 40px; align-items: center; background: #0F2036; border: 1px solid #1F3550; border-radius: 20px; padding: 32px">
+      <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div class="ttl" style="align-self: flex-start; display: flex; flex-direction: column; align-items: center; gap: 2px">
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 30px; line-height: 34px; color: #FFFFFF">CELUTECH</h3>
+          <span class="title-line" aria-hidden="true" style="display: block; width: 64px; height: 0; border-top: 2px solid {{accent}}; border-radius: 2px"></span>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #B4C2D1">{{t.celD}}</p>
+        <ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: #C5D1DE">
+          <sc-for list="{{t.celB}}" as="b" hint-placeholder-count="3"><li>{{b}}</li></sc-for>
+        </ul>
+      </div>
+      <a href="#proyectos" class="shot" aria-label="CELUTECH" style="--acc: {{accent}}; flex: 1 1 420px; min-width: 0; aspect-ratio: 16 / 10; background: #142944; border-radius: 12px; border: 1px dashed #2B4058; text-decoration: none; display: block">
+        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #8EA0B4; font-size: 14px">{{t.celShot}}</div>
+      </a>
+    </article>
+
+    <article style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; background: #0F2036; border: 1px solid #1F3550; border-radius: 20px; padding: 32px">
+      <button type="button" class="shot" aria-label="{{t.thorZoom}}" onClick="{{openZoomThor}}" style="--acc: {{accent}}; flex: 1 1 420px; min-width: 0; aspect-ratio: 1903 / 908; padding: 0; background: #FFFFFF; border-radius: 12px; border: 1px solid #1F3550; display: block; cursor: zoom-in">
+        <img src="./assets/625ee54e1b28c452271138215a434826.jpg" alt="{{t.thorAlt}}" style="width: 100%; height: 100%; object-fit: cover; display: block">
+      </button>
+      <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div class="ttl" style="align-self: flex-start; display: flex; flex-direction: column; align-items: center; gap: 2px">
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 30px; line-height: 34px; color: #FFFFFF">Thor Computación</h3>
+          <span class="title-line" aria-hidden="true" style="display: block; width: 64px; height: 0; border-top: 2px solid {{accent}}; border-radius: 2px"></span>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #B4C2D1">{{t.thorD}}</p>
+        <ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: #C5D1DE">
+          <sc-for list="{{t.thorB}}" as="b" hint-placeholder-count="3"><li>{{b}}</li></sc-for>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section id="proceso" style="background: #0D1D33; border-top: 1px solid #172B44; border-bottom: 1px solid #172B44">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
+        <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{accent}}">{{t.procK}}</p>
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.15; letter-spacing: -0.8px; color: #FFFFFF">{{t.procH}}</h2>
+      </div>
+      <ol class="steps" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+        <sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+          <li class="step" style="position: relative; padding-top: 22px; display: flex; flex-direction: column; gap: 10px">
+            <span aria-hidden="true" style="position: absolute; top: 0; left: 0; right: 0; height: 0; border-top: 2px solid #2B4058"></span>
+            <span class="step-fill" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: {{s.fillW}}; height: 0; border-top: 2px solid {{s.accent}}"></span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #8EA0B4">{{s.label}}</span>
+            <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #FFFFFF">{{s.title}}</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #B4C2D1">{{s.text}}</p>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+  </section>
+
+  <section id="sobre-mi" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
+    <figure style="flex: 0 1 340px; min-width: 260px; margin: 0; display: flex; flex-direction: column; gap: 16px">
+      <div class="photo" style="position: relative; padding: 0 16px 16px 0">
+        <div class="photo-frame" aria-hidden="true" style="position: absolute; top: 16px; left: 16px; right: 0; bottom: 0; border: 2px solid {{accent}}; border-radius: 20px"></div>
+        <div class="photo-img" style="--acc: {{accent}}; position: relative; aspect-ratio: 4 / 5; background: #142944; border: 1px solid #1F3550; border-radius: 20px; overflow: hidden">
+          <div class="photo-zoom" style="position: relative; width: 100%; height: 100%">
+            <img src="./assets/2d53155ff61d05cab1a95d43459c8547.jpg" alt="Mario Alvarez" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+            <img class="photo-alt" src="./assets/ce59fc2fce527930c486da1e683a059b.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+          </div>
+        </div>
+      </div>
+      <figcaption style="display: flex; flex-direction: column; gap: 2px">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 18px; color: #FFFFFF">Mario Alvarez</span>
+        <span style="font-size: 14px; color: #8EA0B4">{{t.photoRole}}</span>
+      </figcaption>
+    </figure>
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+      <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{accent}}">{{t.aboutK}}</p>
+      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.2; letter-spacing: -0.6px; color: #FFFFFF">{{t.aboutH}}</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #B4C2D1">{{t.aboutP1}}</p>
+      <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #B4C2D1">{{t.aboutP2}}</p>
+    </div>
+  </section>
+
+  <section id="contacto" style="padding: 0 24px 96px">
+    <div style="max-width: 1200px; margin: 0 auto; background: {{accent}}; color: #062016; border-radius: 24px; padding: clamp(32px, 6vw, 72px); display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between">
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; letter-spacing: -1px">{{t.ctaH}}</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.55; color: #0B3B27">{{t.ctaP}}</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="#contacto" class="btn-cta" style="background: #0A1628; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px; padding: 16px 26px; border-radius: 12px">{{t.ctaWa}}</a>
+        <button type="button" class="btn-cta-out" aria-expanded="{{formExp}}" aria-controls="form-consulta" onClick="{{toggleForm}}" style="border: 2px solid #0A1628; background: transparent; color: #0A1628; font: inherit; font-weight: 600; font-size: 16px; padding: 14px 24px; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px">{{t.ctaForm}}<svg class="chev {{chevCls}}" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6l6-6"></path></svg></button>
+      </div>
+      <div class="cform-wrap {{formWrapCls}}" style="flex: 1 1 100%; min-width: 0; display: grid; grid-template-rows: 0fr; margin-top: -32px">
+       <div style="overflow: hidden; min-height: 0">
+        <div id="form-consulta" class="cform" style="background: #0A1628; color: #E8EEF5; border-radius: 18px; padding: clamp(20px, 3vw, 32px)">
+          <sc-if value="{{notSent}}" hint-placeholder-val="{{true}}">
+            <form onSubmit="{{submit}}" style="display: flex; flex-direction: column; gap: 16px">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+                <div style="display: flex; flex-direction: column; gap: 6px">
+                  <label for="c-name" style="font-size: 14px; font-weight: 500; color: #C5D1DE">{{t.fName}}</label>
+                  <input id="c-name" name="name" type="text" autocomplete="name" required="" class="fld" style="width: 100%; box-sizing: border-box; min-height: 48px; background: #0F2036; border: 1px solid #2B4058; border-radius: 10px; color: #FFFFFF; padding: 12px 14px; font: inherit; font-size: 16px">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px">
+                  <label for="c-email" style="font-size: 14px; font-weight: 500; color: #C5D1DE">{{t.fEmail}}</label>
+                  <input id="c-email" name="email" type="email" autocomplete="email" class="fld" style="width: 100%; box-sizing: border-box; min-height: 48px; background: #0F2036; border: 1px solid #2B4058; border-radius: 10px; color: #FFFFFF; padding: 12px 14px; font: inherit; font-size: 16px">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px">
+                  <label for="c-phone" style="font-size: 14px; font-weight: 500; color: #C5D1DE">{{t.fPhone}}</label>
+                  <input id="c-phone" name="phone" type="tel" autocomplete="tel" class="fld" style="width: 100%; box-sizing: border-box; min-height: 48px; background: #0F2036; border: 1px solid #2B4058; border-radius: 10px; color: #FFFFFF; padding: 12px 14px; font: inherit; font-size: 16px">
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 6px">
+                <label for="c-msg" style="font-size: 14px; font-weight: 500; color: #C5D1DE">{{t.fMsg}}</label>
+                <textarea id="c-msg" name="message" rows="4" required="" placeholder="{{t.fMsgPh}}" class="fld" style="width: 100%; box-sizing: border-box; min-height: 120px; resize: vertical; background: #0F2036; border: 1px solid #2B4058; border-radius: 10px; color: #FFFFFF; padding: 12px 14px; font: inherit; font-size: 16px; line-height: 1.5"></textarea>
+              </div>
+              <sc-if value="{{err}}" hint-placeholder-val="{{false}}">
+                <p role="alert" style="margin: 0; font-size: 14px; color: #FCA5A5">{{t.fErr}}</p>
+              </sc-if>
+              <div style="display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between">
+                <p style="margin: 0; font-size: 13px; color: #8EA0B4; flex: 1 1 240px">{{t.fNote}}</p>
+                <button type="submit" class="send btn-pri" style="min-height: 52px; padding: 0 28px; border: 0; border-radius: 12px; background: {{accent}}; color: #062016; font: inherit; font-size: 16px; font-weight: 600; cursor: pointer">{{t.fSend}}</button>
+              </div>
+            </form>
+          </sc-if>
+          <sc-if value="{{sent}}" hint-placeholder-val="{{false}}">
+            <div role="status" style="display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 12px 0">
+              <svg aria-hidden="true" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M7.5 12.5l3 3l6-6.5"></path></svg>
+              <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 26px; color: #FFFFFF">{{t.fOkH}}</h3>
+              <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B4C2D1">{{t.fOkP}}</p>
+              <button type="button" class="btn-sec" onClick="{{reset}}" style="min-height: 44px; padding: 0 18px; border: 1px solid #2B4058; border-radius: 10px; background: transparent; color: #FFFFFF; font: inherit; font-size: 15px; cursor: pointer">{{t.fAgain}}</button>
+            </div>
+          </sc-if>
+        </div>
+       </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #172B44">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 16px; align-items: center; font-size: 14px; color: #8EA0B4">
+      <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #FFFFFF">guavix<span style="color: {{accent}}">.</span></span>
+      <span style="text-align: center">{{t.rights}}</span>
+      <span aria-hidden="true"></span>
+    </div>
+  </footer>
+
+  <sc-if value="{{zoom}}" hint-placeholder-val="{{false}}">
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="{{zoomAlt}}" onClick="{{closeZoom}}" style="position: fixed; inset: 0; z-index: 100; box-sizing: border-box; padding: clamp(16px, 4vw, 48px); background: rgba(5, 12, 22, 0.9); display: flex; align-items: center; justify-content: center; cursor: zoom-out">
+      <img class="lb-img" src="{{zoomSrc}}" alt="{{zoomAlt}}" style="max-width: 100%; max-height: 100%; border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); display: block">
+      <button type="button" class="lb-close" aria-label="{{t.zoomClose}}" onClick="{{closeZoom}}" style="position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #2B4058; background: #0F2036; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#10B981","options":["#10B981","#34D399","#22C55E","#14B8A6"]},"lang":{"editor":"enum","default":"es","options":["es","en","pt"]},"$preview":{"width":1280,"height":3700}}'>
+var I18N = {
+  es: {
+    navAria: "Principal", langAria: "Idioma", navServ: "Servicios", navProj: "Proyectos", navProc: "Cómo trabajo", navAbout: "Sobre mí", navTalk: "Hablemos",
+    kicker: "// Desarrollador de sistemas",
+    h1: "Sistemas a medida que ordenan tu negocio.",
+    lead: "Soy Mario Alvarez. Desarrollo sistemas de gestión, ventas e inventario para comercios y pymes: desde el inicio de sesión hasta el PDF del comprobante, funcionando en tu propio dominio.",
+    btnProj: "Ver proyectos", btnQuote: "Pedir presupuesto", langLabel: "Proyectos en", mockUrl: "tu-negocio.com/ventas",
+    servK: "01 — Servicios", servH: "Lo que puedo construir para ti",
+    s1t: "Sistemas de gestión", s1d: "Ventas, presupuestos, inventario, clientes, proveedores y caja en un solo lugar, con usuarios y permisos por rol.",
+    s2t: "Sitios y landing pages", s2d: "Páginas rápidas, que se ven bien en el teléfono y llevan a tus clientes directo a WhatsApp o a un formulario.",
+    s3t: "Automatización y reportes", s3d: "Comprobantes y catálogos en PDF, scripts que eliminan tareas repetitivas y reportes que salen solos.",
+    projK: "02 — Proyectos", projH: "Sistemas reales, en producción",
+    erpShot: "[Captura del ERP — pantalla de ventas]", erpAlt: "Pantalla de inventario del sistema Barreiros", zoomOpen: "Ampliar captura de Barreiros", zoomClose: "Cerrar", erpCat: "ERP para comercio",
+    erpD: "Sistema de gestión completo para una ferretería: ventas con pagos parciales y a crédito, presupuestos, inventario, clientes y proveedores con saldos, notas de crédito, movimientos de caja y catálogo en PDF para enviar a clientes.",
+    erpB: ["Usuarios con roles y permisos por página", "Comprobantes y catálogo generados en PDF", "Publicado en dominio propio, detrás de Cloudflare"],
+    celShot: "[Captura de CELUTECH — panel de ventas]", celCat: "Ventas de celulares",
+    celD: "Sistema full-stack para la venta de teléfonos, con panel de métricas de unidades vendidas y control de inventario, que centraliza la gestión diaria del negocio.",
+    celB: ["Registro de ventas, consulta de inventario y resúmenes de ventas en un solo lugar", "Estadísticas de ventas por período mensual en gráficos", "Inicio de sesión seguro con contraseñas cifradas"],
+    thorD: "Landing page para un comercio de informática y seguridad que instala cámaras, cerraduras electrónicas y controles de acceso para consorcios. Presenta sus servicios de forma clara y lleva al visitante directo a la consulta.",
+    thorB: ["Secciones de servicios, tecnología y contacto", "Botón flotante de WhatsApp para consultas rápidas", "Accesos directos a redes sociales y correo"],
+    thorAlt: "Página de inicio de Thor Computación", thorZoom: "Ampliar captura de Thor Computación",
+    procK: "03 — Cómo trabajo", procH: "De la idea al sistema funcionando", step: "Paso",
+    steps: [
+      ["Reunión inicial", "Entiendo cómo funciona hoy tu negocio y qué te está quitando tiempo."],
+      ["Propuesta clara", "Módulos, plazos y precio por escrito, antes de escribir una línea de código."],
+      ["Avances por módulo", "Vas probando cada parte a medida que la termino, con tus datos reales."],
+      ["Publicación y soporte", "Lo dejo funcionando en tu dominio y sigo disponible para ajustes y módulos nuevos."]
+    ],
+    photoRole: "Desarrollador de sistemas",
+    aboutK: "04 — Sobre mí", aboutH: "Sistemas pensados para durar",
+    aboutP1: "Soy desarrollador de sistemas, especializado en crear soluciones a medida para tu negocio. En cada proyecto priorizo que tus datos estén seguros, que el sistema sea confiable, preciso y preparado para crecer contigo. Además, busco que sea intuitivo y cómodo de usar, para que tú y tu equipo trabajen de forma ordenada desde el primer día.",
+    aboutP2: "Hablo español, inglés y portugués, así que puedo trabajar con clientes y equipos estén donde estén.",
+    ctaH: "¿Tienes un proyecto en mente?", ctaP: "Cuéntame qué necesitas y te respondo con una propuesta en menos de [48 h].",
+    ctaWa: "Escríbeme por WhatsApp", ctaForm: "Enviar correo",
+    fName: "Nombre", fEmail: "Correo electrónico", fPhone: "Teléfono", fMsg: "¿Qué necesitas?",
+    fMsgPh: "Un breve resumen: qué tipo de negocio tienes y qué te gustaría resolver.",
+    fSend: "Enviar mensaje", fNote: "Déjame al menos un correo o un teléfono para contactarte.",
+    fErr: "Indica un correo o un teléfono para poder contactarte.",
+    fOkH: "¡Mensaje recibido!", fOkP: "Gracias por escribir. Te contactaré muy pronto.", fAgain: "Enviar otro mensaje",
+    rights: "© 2026 Guavix. Todos los derechos reservados."
+  },
+  en: {
+    navAria: "Main", langAria: "Language", navServ: "Services", navProj: "Projects", navProc: "How I work", navAbout: "About me", navTalk: "Let's talk",
+    kicker: "// Systems developer",
+    h1: "Custom systems that bring order to your business.",
+    lead: "I'm Mario Alvarez. I build management, sales and inventory systems for shops and small businesses: from the login screen to the PDF invoice, running on your own domain.",
+    btnProj: "See projects", btnQuote: "Get a quote", langLabel: "Projects in", mockUrl: "your-business.com/sales",
+    servK: "01 — Services", servH: "What I can build for you",
+    s1t: "Management systems", s1d: "Sales, quotes, inventory, customers, suppliers and cash flow in one place, with users and role-based permissions.",
+    s2t: "Websites and landing pages", s2d: "Fast pages that look great on mobile and take your customers straight to WhatsApp or a contact form.",
+    s3t: "Automation and reports", s3d: "PDF invoices and catalogs, scripts that remove repetitive tasks, and reports that generate themselves.",
+    projK: "02 — Projects", projH: "Real systems, in production",
+    erpShot: "[ERP screenshot — sales screen]", erpAlt: "Inventory screen of the Barreiros system", zoomOpen: "Enlarge Barreiros screenshot", zoomClose: "Close", erpCat: "Retail ERP",
+    erpD: "A complete management system for a hardware store: sales with partial payments and store credit, quotes, inventory, customers and suppliers with balances, credit notes, cash movements and a PDF catalog to send to customers.",
+    erpB: ["Users with roles and per-page permissions", "Invoices and catalog generated as PDF", "Deployed on its own domain, behind Cloudflare"],
+    celShot: "[CELUTECH screenshot — sales dashboard]", celCat: "Phone sales",
+    celD: "A full-stack system for phone sales, with a dashboard of units sold and inventory control that brings the day-to-day running of the business into one place.",
+    celB: ["Record sales, check inventory and review sales summaries in one place", "Monthly sales statistics in charts", "Secure login with encrypted passwords"],
+    thorD: "Landing page for an IT and security business that installs cameras, electronic locks and access control for residential buildings. It presents its services clearly and takes visitors straight to an inquiry.",
+    thorB: ["Services, technology and contact sections", "Floating WhatsApp button for quick inquiries", "Direct links to social media and email"],
+    thorAlt: "Thor Computación home page", thorZoom: "Enlarge Thor Computación screenshot",
+    procK: "03 — How I work", procH: "From idea to a working system", step: "Step",
+    steps: [
+      ["Kickoff call", "I learn how your business works today and what is costing you time."],
+      ["Clear proposal", "Modules, timeline and price in writing, before a single line of code."],
+      ["Module-by-module progress", "You test each part as I finish it, with your real data."],
+      ["Launch and support", "I set it up on your domain and stay available for tweaks and new modules."]
+    ],
+    photoRole: "Systems developer",
+    aboutK: "04 — About me", aboutH: "Systems built to last",
+    aboutP1: "I'm a systems developer, specialized in building custom solutions for your business. In every project I make sure your data is safe and that the system is reliable, accurate and ready to grow with you. I also make it intuitive and comfortable to use, so you and your team can work in an organized way from day one.",
+    aboutP2: "I speak Spanish, English and Portuguese, so I can work with clients and teams wherever they are.",
+    ctaH: "Have a project in mind?", ctaP: "Tell me what you need and I'll reply with a proposal within [48 h].",
+    ctaWa: "Message me on WhatsApp", ctaForm: "Send an email",
+    fName: "Name", fEmail: "Email", fPhone: "Phone", fMsg: "What do you need?",
+    fMsgPh: "A short summary: what kind of business you have and what you'd like to solve.",
+    fSend: "Send message", fNote: "Leave at least an email or a phone number so I can reach you.",
+    fErr: "Please add an email or a phone number so I can reach you.",
+    fOkH: "Message received!", fOkP: "Thanks for reaching out. I'll be in touch very soon.", fAgain: "Send another message",
+    rights: "© 2026 Guavix. All rights reserved."
+  },
+  pt: {
+    navAria: "Principal", langAria: "Idioma", navServ: "Serviços", navProj: "Projetos", navProc: "Como trabalho", navAbout: "Sobre mim", navTalk: "Vamos conversar",
+    kicker: "// Desenvolvedor de sistemas",
+    h1: "Sistemas sob medida que organizam o seu negócio.",
+    lead: "Sou Mario Alvarez. Desenvolvo sistemas de gestão, vendas e estoque para lojas e pequenas empresas: do login ao PDF do comprovante, funcionando no seu próprio domínio.",
+    btnProj: "Ver projetos", btnQuote: "Pedir orçamento", langLabel: "Projetos em", mockUrl: "seu-negocio.com/vendas",
+    servK: "01 — Serviços", servH: "O que posso construir para você",
+    s1t: "Sistemas de gestão", s1d: "Vendas, orçamentos, estoque, clientes, fornecedores e caixa em um só lugar, com usuários e permissões por perfil.",
+    s2t: "Sites e landing pages", s2d: "Páginas rápidas, que ficam ótimas no celular e levam seus clientes direto ao WhatsApp ou a um formulário.",
+    s3t: "Automação e relatórios", s3d: "Comprovantes e catálogos em PDF, scripts que eliminam tarefas repetitivas e relatórios que saem sozinhos.",
+    projK: "02 — Projetos", projH: "Sistemas reais, em produção",
+    erpShot: "[Captura do ERP — tela de vendas]", erpAlt: "Tela de estoque do sistema Barreiros", zoomOpen: "Ampliar captura do Barreiros", zoomClose: "Fechar", erpCat: "ERP para comércio",
+    erpD: "Sistema de gestão completo para uma loja de ferragens: vendas com pagamentos parciais e fiado, orçamentos, estoque, clientes e fornecedores com saldos, notas de crédito, movimentações de caixa e catálogo em PDF para enviar aos clientes.",
+    erpB: ["Usuários com perfis e permissões por página", "Comprovantes e catálogo gerados em PDF", "Publicado em domínio próprio, atrás do Cloudflare"],
+    celShot: "[Captura do CELUTECH — painel de vendas]", celCat: "Venda de celulares",
+    celD: "Sistema full-stack para a venda de celulares, com painel de unidades vendidas e controle de estoque, que centraliza a gestão diária do negócio.",
+    celB: ["Registro de vendas, consulta de estoque e resumos de vendas em um só lugar", "Estatísticas de vendas por período mensal em gráficos", "Login seguro com senhas criptografadas"],
+    thorD: "Landing page para uma loja de informática e segurança que instala câmeras, fechaduras eletrônicas e controles de acesso para condomínios. Apresenta seus serviços de forma clara e leva o visitante direto ao contato.",
+    thorB: ["Seções de serviços, tecnologia e contato", "Botão flutuante de WhatsApp para consultas rápidas", "Acesso direto às redes sociais e ao e-mail"],
+    thorAlt: "Página inicial da Thor Computación", thorZoom: "Ampliar captura da Thor Computación",
+    procK: "03 — Como trabalho", procH: "Da ideia ao sistema funcionando", step: "Passo",
+    steps: [
+      ["Conversa inicial", "Entendo como seu negócio funciona hoje e o que está tomando seu tempo."],
+      ["Proposta clara", "Módulos, prazos e preço por escrito, antes de escrever uma linha de código."],
+      ["Avanços por módulo", "Você testa cada parte à medida que eu termino, com seus dados reais."],
+      ["Publicação e suporte", "Deixo funcionando no seu domínio e continuo disponível para ajustes e novos módulos."]
+    ],
+    photoRole: "Desenvolvedor de sistemas",
+    aboutK: "04 — Sobre mim", aboutH: "Sistemas feitos para durar",
+    aboutP1: "Sou desenvolvedor de sistemas, especializado em criar soluções sob medida para o seu negócio. Em cada projeto, priorizo que seus dados estejam seguros, que o sistema seja confiável, preciso e preparado para crescer com você. Além disso, busco que seja intuitivo e confortável de usar, para que você e sua equipe trabalhem de forma organizada desde o primeiro dia.",
+    aboutP2: "Falo espanhol, inglês e português, então posso trabalhar com clientes e equipes onde quer que estejam.",
+    ctaH: "Tem um projeto em mente?", ctaP: "Conte o que você precisa e eu respondo com uma proposta em menos de [48 h].",
+    ctaWa: "Fale comigo no WhatsApp", ctaForm: "Enviar e-mail",
+    fName: "Nome", fEmail: "E-mail", fPhone: "Telefone", fMsg: "Do que você precisa?",
+    fMsgPh: "Um breve resumo: que tipo de negócio você tem e o que gostaria de resolver.",
+    fSend: "Enviar mensagem", fNote: "Deixe pelo menos um e-mail ou telefone para que eu possa entrar em contato.",
+    fErr: "Informe um e-mail ou telefone para que eu possa entrar em contato.",
+    fOkH: "Mensagem recebida!", fOkP: "Obrigado por escrever. Entrarei em contato em breve.", fAgain: "Enviar outra mensagem",
+    rights: "© 2026 Guavix. Todos os direitos reservados."
+  }
+};
+var LANGS = [
+  { id: "es", code: "ES", name: "Español" },
+  { id: "en", code: "EN", name: "English" },
+  { id: "pt", code: "PT", name: "Português" }
+];
+class Component extends DCLogic {
+  componentDidMount() {
+    var self = this;
+    var start = function () { if (!self.state || !self.state.chartOn) self.setState({ chartOn: true }); };
+    var el = this._chartEl;
+    if (el && typeof IntersectionObserver !== 'undefined') {
+      this._io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            start();
+            if (self._io) { self._io.disconnect(); self._io = null; }
+          }
+        });
+      }, { threshold: 0.5 });
+      this._io.observe(el);
+    } else {
+      start();
+    }
+  }
+  componentWillUnmount() {
+    if (this._io) { this._io.disconnect(); this._io = null; }
+  }
+  renderVals() {
+    var accent = this.props.accent ?? '#10B981';
+    var lang = (this.state && this.state.lang) || this.props.lang || 'es';
+    if (!I18N[lang]) lang = 'es';
+    var t = I18N[lang];
+    var self = this;
+    var langs = LANGS.map(function (l) {
+      return {
+        code: l.code, name: l.name,
+        pressed: l.id === lang ? 'true' : 'false',
+        color: l.id === lang ? '#062016' : '#8EA0B4',
+        pick: function () { self.setState({ lang: l.id }); }
+      };
+    });
+    var steps = t.steps.map(function (s, i) {
+      return { label: t.step + ' ' + (i + 1), title: s[0], text: s[1], accent: accent, fillW: i === 0 ? '100%' : '0px' };
+    });
+    var st = this.state || {};
+    var sent = !!st.sent;
+    var submit = function (e) {
+      if (e && e.preventDefault) e.preventDefault();
+      var f = e && e.target && e.target.elements;
+      var em = f && f.email ? String(f.email.value || '').trim() : '';
+      var ph = f && f.phone ? String(f.phone.value || '').trim() : '';
+      if (!em && !ph) { self.setState({ err: true }); return; }
+      self.setState({ sent: true, err: false });
+    };
+    var reset = function () { self.setState({ sent: false, err: false }); };
+    var zoomKey = st.zoom || '';
+    var zoom = !!zoomKey;
+    var ZOOMS = { erp: { src: './assets/0f039bc3bb2e1b4c0b2c4a3ab2bcf4c4.jpg', alt: t.erpAlt }, thor: { src: './assets/625ee54e1b28c452271138215a434826.jpg', alt: t.thorAlt } };
+    var zInfo = ZOOMS[zoomKey] || ZOOMS.erp;
+    var openZoomErp = function () { self.setState({ zoom: 'erp' }); };
+    var openZoomThor = function () { self.setState({ zoom: 'thor' }); };
+    var closeZoom = function () { self.setState({ zoom: false }); };
+    var formOpen = !!st.formOpen;
+    var toggleForm = function () { self.setState({ formOpen: !formOpen }); };
+    var langIdx = 0;
+    LANGS.forEach(function (l, i) { if (l.id === lang) langIdx = i; });
+    var langX = 'translateX(' + (langIdx * 46) + 'px)';
+    if (!this._setChart) this._setChart = function (n) { self._chartEl = n; };
+    var chartCls = (this.state && this.state.chartOn) ? 'bars run' : 'bars';
+    var navCls = (this.state && this.state.chartOn) ? 'mnav run' : 'mnav';
+    return { setChart: this._setChart, chartCls: chartCls, navCls: navCls, accent: accent, lang: lang, t: t, langs: langs, langX: langX, steps: steps, sent: sent, notSent: !sent, err: !!st.err, submit: submit, reset: reset, formOpen: formOpen, toggleForm: toggleForm, zoom: zoom, openZoomErp: openZoomErp, openZoomThor: openZoomThor, closeZoom: closeZoom, zoomSrc: zInfo.src, zoomAlt: zInfo.alt, formExp: formOpen ? 'true' : 'false', formWrapCls: formOpen ? 'open' : '', chevCls: formOpen ? 'open' : '' };
+  }
+}
+</script>
+</body>
+</html>
