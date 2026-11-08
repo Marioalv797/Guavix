@@ -188,6 +188,7 @@ a{color:#34D399}a:hover{color:#6EE7B7}
     <a href="#inicio" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.5px; color: #FFFFFF; text-decoration: none">guavix<span style="color: {{accent}}">.</span></a>
     <nav aria-label="{{t.navAria}}" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
       <a href="#servicios" class="nav-link" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navServ}}</a>
+      <a href="#por-que" class="nav-link" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navWhy}}</a>
       <a href="#proyectos" class="nav-link" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navProj}}</a>
       <a href="#proceso" class="nav-link" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navProc}}</a>
       <a href="#sobre-mi" class="nav-link" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navAbout}}</a>
@@ -286,6 +287,65 @@ a{color:#34D399}a:hover{color:#6EE7B7}
           <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B4C2D1">{{t.s3d}}</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="por-que" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 40px">
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 680px">
+      <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{accent}}">{{t.whyK}}</p>
+      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.15; letter-spacing: -0.8px; color: #FFFFFF">{{t.whyH}}</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #B4C2D1">{{t.whyP}}</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+        <div class="svc" style="--acc: {{accent}}; background: #0F2036; border: 1px solid #1F3550; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; gap: 12px; align-items: center">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+            <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 21px; line-height: 1.25; color: #FFFFFF">{{t.w1t}}</h3>
+          </div>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B4C2D1">{{t.w1d}}</p>
+        </div>
+        <div class="svc" style="--acc: {{accent}}; background: #0F2036; border: 1px solid #1F3550; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; gap: 12px; align-items: center">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><path d="M12 3l8 4v5c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V7z"></path><path d="M8.5 12l2.5 2.5l4.5-5"></path></svg>
+            <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 21px; line-height: 1.25; color: #FFFFFF">{{t.w2t}}</h3>
+          </div>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B4C2D1">{{t.w2d}}</p>
+        </div>
+        <div class="svc" style="--acc: {{accent}}; background: #0F2036; border: 1px solid #1F3550; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; gap: 12px; align-items: center">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1.1-4.6A8 8 0 1 1 21 12z"></path><path d="M9 11.5l2 2l4-4"></path></svg>
+            <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 21px; line-height: 1.25; color: #FFFFFF">{{t.w3t}}</h3>
+          </div>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B4C2D1">{{t.w3d}}</p>
+        </div>
+        <div class="svc" style="--acc: {{accent}}; background: #0F2036; border: 1px solid #1F3550; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; gap: 12px; align-items: center">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18"></path><path d="M7 15h3"></path></svg>
+            <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 21px; line-height: 1.25; color: #FFFFFF">{{t.w4t}}</h3>
+          </div>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B4C2D1">{{t.w4d}}</p>
+        </div>
+        <div class="svc" style="--acc: {{accent}}; background: #0F2036; border: 1px solid #1F3550; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; gap: 12px; align-items: center">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><path d="M4 20V10"></path><path d="M10 20V4"></path><path d="M16 20v-7"></path><path d="M22 20H2"></path></svg>
+            <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 21px; line-height: 1.25; color: #FFFFFF">{{t.w5t}}</h3>
+          </div>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B4C2D1">{{t.w5d}}</p>
+        </div>
+        <div class="svc" style="--acc: {{accent}}; background: #0F2036; border: 1px solid #1F3550; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; gap: 12px; align-items: center">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><path d="M16 4.5a3 3 0 0 1 0 6"></path><path d="M18 14c2 .6 3 2.8 3 6"></path></svg>
+            <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 21px; line-height: 1.25; color: #FFFFFF">{{t.w6t}}</h3>
+          </div>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B4C2D1">{{t.w6d}}</p>
+        </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; background: #0D1D33; border: 1px solid #1F3550; border-left: 3px solid {{accent}}; border-radius: 16px; padding: 24px 28px">
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+        <p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #FFFFFF">{{t.whyCtaH}}</p>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #B4C2D1">{{t.whyCtaP}}</p>
+      </div>
+      <a href="#contacto" class="btn-pri" style="--acc: {{accent}}; background: {{accent}}; color: #062016; text-decoration: none; font-size: 15px; font-weight: 600; padding: 14px 22px; border-radius: 10px; white-space: nowrap">{{t.whyBtn}}</a>
     </div>
   </section>
 
@@ -466,7 +526,7 @@ a{color:#34D399}a:hover{color:#6EE7B7}
 <script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#10B981","options":["#10B981","#34D399","#22C55E","#14B8A6"]},"lang":{"editor":"enum","default":"es","options":["es","en","pt"]},"$preview":{"width":1280,"height":3700}}'>
 var I18N = {
   es: {
-    navAria: "Principal", langAria: "Idioma", navServ: "Servicios", navProj: "Proyectos", navProc: "Cómo trabajo", navAbout: "Sobre mí", navTalk: "Hablemos",
+    navAria: "Principal", langAria: "Idioma", navServ: "Servicios", navWhy: "Por qué", navProj: "Proyectos", navProc: "Cómo trabajo", navAbout: "Sobre mí", navTalk: "Hablemos",
     kicker: "// Desarrollador de sistemas",
     h1: "Sistemas a medida que ordenan tu negocio.",
     lead: "Soy Mario Alvarez. Desarrollo sistemas de gestión, ventas e inventario para comercios y pymes: desde el inicio de sesión hasta el PDF del comprobante, funcionando en tu propio dominio.",
@@ -475,7 +535,15 @@ var I18N = {
     s1t: "Sistemas de gestión", s1d: "Ventas, presupuestos, inventario, clientes, proveedores y caja en un solo lugar, con usuarios y permisos por rol.",
     s2t: "Sitios y landing pages", s2d: "Páginas rápidas, que se ven bien en el teléfono y llevan a tus clientes directo a WhatsApp o a un formulario.",
     s3t: "Automatización y reportes", s3d: "Comprobantes y catálogos en PDF, scripts que eliminan tareas repetitivas y reportes que salen solos.",
-    projK: "02 — Proyectos", projH: "Sistemas reales, en producción",
+    whyK: "02 — Por qué un sistema", whyH: "Menos tiempo ordenando, más tiempo vendiendo", whyP: "Cuaderno, planillas y mensajes sueltos funcionan… hasta que el negocio crece. Un sistema a medida pone todo en un solo lugar y trabaja como trabaja tu comercio.",
+    w1t: "Recuperas horas cada semana", w1d: "Cada venta actualiza stock, caja y saldo del cliente al instante. Se acabó cargar lo mismo en el cuaderno, la planilla y el WhatsApp.",
+    w2t: "Cero confusiones a futuro", w2d: "Precios, stock, deudas y pagos quedan registrados con fecha y usuario. Lo que se acordó hoy se puede consultar dentro de un año, sin discusiones.",
+    w3t: "Respondes a tus clientes al momento", w3d: "Stock, precio y presupuesto en PDF en segundos, listos para enviar por WhatsApp. Un cliente que recibe respuesta rápida es un cliente que compra.",
+    w4t: "Tu dinero, siempre claro", w4d: "Ingresos, egresos, pagos parciales y cuentas corrientes de clientes y proveedores al día. Sabes cuánto entró, cuánto falta cobrar y cuánto debes pagar.",
+    w5t: "Decides con datos, no a ojo", w5d: "Reportes de qué se vende, qué no y cuándo reponer. Compras mejor, evitas mercadería parada y no pierdes ventas por falta de stock.",
+    w6t: "Tu negocio crece sin desorden", w6d: "Cada empleado con su usuario y permisos, y tú con acceso desde cualquier lugar. Sumar personas o sucursales no significa perder el control.",
+    whyCtaH: "¿Te reconoces en alguna de estas situaciones?", whyCtaP: "Cuéntame cómo trabaja hoy tu negocio y te digo, sin compromiso, qué se puede mejorar.", whyBtn: "Hablemos de tu negocio",
+    projK: "03 — Proyectos", projH: "Sistemas reales, en producción",
     erpShot: "[Captura del ERP — pantalla de ventas]", erpAlt: "Pantalla de inventario del sistema Barreiros", zoomOpen: "Ampliar captura de Barreiros", zoomClose: "Cerrar", erpCat: "ERP para comercio",
     erpD: "Sistema de gestión completo para una distribuidora de perfiles y accesorios para carpintería de aluminio: ventas con pagos parciales y a crédito, presupuestos, inventario, clientes y proveedores con saldos, notas de crédito, movimientos de caja y catálogo en PDF para enviar a clientes.",
     erpB: ["Usuarios con roles y permisos por página", "Comprobantes y catálogo generados en PDF", "Publicado en dominio propio, detrás de Cloudflare"],
@@ -485,7 +553,7 @@ var I18N = {
     thorD: "Landing page para un comercio de informática y seguridad que instala cámaras, cerraduras electrónicas y controles de acceso para consorcios. Presenta sus servicios de forma clara y lleva al visitante directo a la consulta.",
     thorB: ["Secciones de servicios, tecnología y contacto", "Botón flotante de WhatsApp para consultas rápidas", "Accesos directos a redes sociales y correo"],
     thorAlt: "Página de inicio de Thor Computación", thorZoom: "Ampliar captura de Thor Computación",
-    procK: "03 — Cómo trabajo", procH: "De la idea al sistema funcionando", step: "Paso",
+    procK: "04 — Cómo trabajo", procH: "De la idea al sistema funcionando", step: "Paso",
     steps: [
       ["Reunión inicial", "Entiendo cómo funciona hoy tu negocio y qué te está quitando tiempo."],
       ["Propuesta clara", "Módulos, plazos y precio por escrito, antes de escribir una línea de código."],
@@ -493,7 +561,7 @@ var I18N = {
       ["Publicación y soporte", "Lo dejo funcionando en tu dominio y sigo disponible para ajustes y módulos nuevos."]
     ],
     photoRole: "Desarrollador de sistemas",
-    aboutK: "04 — Sobre mí", aboutH: "Sistemas pensados para durar",
+    aboutK: "05 — Sobre mí", aboutH: "Sistemas pensados para durar",
     aboutP1: "Soy desarrollador de sistemas, especializado en crear soluciones a medida para tu negocio. En cada proyecto priorizo que tus datos estén seguros, que el sistema sea confiable, preciso y preparado para crecer contigo. Además, busco que sea intuitivo y cómodo de usar, para que tú y tu equipo trabajen de forma ordenada desde el primer día.",
     aboutP2: "Hablo español, inglés y portugués, así que puedo trabajar con clientes y equipos donde quiera que estén.",
     ctaH: "¿Tienes un proyecto en mente?", ctaP: "Cuéntame qué necesitas y te respondo con una propuesta en menos de [48 h].",
@@ -506,7 +574,7 @@ var I18N = {
     rights: "© 2026 Guavix. Todos los derechos reservados."
   },
   en: {
-    navAria: "Main", langAria: "Language", navServ: "Services", navProj: "Projects", navProc: "How I work", navAbout: "About me", navTalk: "Let's talk",
+    navAria: "Main", langAria: "Language", navServ: "Services", navWhy: "Why", navProj: "Projects", navProc: "How I work", navAbout: "About me", navTalk: "Let's talk",
     kicker: "// Systems developer",
     h1: "Custom systems that bring order to your business.",
     lead: "I'm Mario Alvarez. I build management, sales and inventory systems for shops and small businesses: from the login screen to the PDF invoice, running on your own domain.",
@@ -515,7 +583,15 @@ var I18N = {
     s1t: "Management systems", s1d: "Sales, quotes, inventory, customers, suppliers and cash flow in one place, with users and role-based permissions.",
     s2t: "Websites and landing pages", s2d: "Fast pages that look great on mobile and take your customers straight to WhatsApp or a contact form.",
     s3t: "Automation and reports", s3d: "PDF invoices and catalogs, scripts that remove repetitive tasks, and reports that generate themselves.",
-    projK: "02 — Projects", projH: "Real systems, in production",
+    whyK: "02 — Why a system", whyH: "Less time sorting things out, more time selling", whyP: "Notebooks, spreadsheets and scattered messages work… until the business grows. A custom system puts everything in one place and works the way your business works.",
+    w1t: "Get hours back every week", w1d: "Every sale updates stock, cash and the customer's balance instantly. No more entering the same thing in a notebook, a spreadsheet and WhatsApp.",
+    w2t: "No confusion down the road", w2d: "Prices, stock, debts and payments are recorded with date and user. What was agreed today can be checked a year from now, no arguments.",
+    w3t: "Answer your customers right away", w3d: "Stock, price and a PDF quote in seconds, ready to send on WhatsApp. A customer who gets a fast answer is a customer who buys.",
+    w4t: "Your money, always clear", w4d: "Income, expenses, partial payments and customer and supplier accounts up to date. You know what came in, what's still owed to you and what you owe.",
+    w5t: "Decide with data, not guesswork", w5d: "Reports on what sells, what doesn't and when to restock. You buy smarter, avoid dead stock and don't lose sales to empty shelves.",
+    w6t: "Grow without the chaos", w6d: "Each employee gets their own user and permissions, and you get access from anywhere. Adding people or locations doesn't mean losing control.",
+    whyCtaH: "Sound familiar?", whyCtaP: "Tell me how your business runs today and I'll tell you, with no strings attached, what can be improved.", whyBtn: "Let's talk about your business",
+    projK: "03 — Projects", projH: "Real systems, in production",
     erpShot: "[ERP screenshot — sales screen]", erpAlt: "Inventory screen of the Barreiros system", zoomOpen: "Enlarge Barreiros screenshot", zoomClose: "Close", erpCat: "Retail ERP",
     erpD: "A complete management system for an aluminum joinery profiles and accessories distributor: sales with partial payments and store credit, quotes, inventory, customers and suppliers with balances, credit notes, cash movements and a PDF catalog to send to customers.",
     erpB: ["Users with roles and per-page permissions", "Invoices and catalog generated as PDF", "Deployed on its own domain, behind Cloudflare"],
@@ -525,7 +601,7 @@ var I18N = {
     thorD: "Landing page for an IT and security business that installs cameras, electronic locks and access control for residential buildings. It presents its services clearly and takes visitors straight to an inquiry.",
     thorB: ["Services, technology and contact sections", "Floating WhatsApp button for quick inquiries", "Direct links to social media and email"],
     thorAlt: "Thor Computación home page", thorZoom: "Enlarge Thor Computación screenshot",
-    procK: "03 — How I work", procH: "From idea to a working system", step: "Step",
+    procK: "04 — How I work", procH: "From idea to a working system", step: "Step",
     steps: [
       ["Kickoff call", "I learn how your business works today and what is costing you time."],
       ["Clear proposal", "Modules, timeline and price in writing, before a single line of code."],
@@ -533,7 +609,7 @@ var I18N = {
       ["Launch and support", "I set it up on your domain and stay available for tweaks and new modules."]
     ],
     photoRole: "Systems developer",
-    aboutK: "04 — About me", aboutH: "Systems built to last",
+    aboutK: "05 — About me", aboutH: "Systems built to last",
     aboutP1: "I'm a systems developer, specialized in building custom solutions for your business. In every project I make sure your data is safe and that the system is reliable, accurate and ready to grow with you. I also make it intuitive and comfortable to use, so you and your team can work in an organized way from day one.",
     aboutP2: "I speak Spanish, English and Portuguese, so I can work with clients and teams wherever they are.",
     ctaH: "Have a project in mind?", ctaP: "Tell me what you need and I'll reply with a proposal within [48 h].",
@@ -546,7 +622,7 @@ var I18N = {
     rights: "© 2026 Guavix. All rights reserved."
   },
   pt: {
-    navAria: "Principal", langAria: "Idioma", navServ: "Serviços", navProj: "Projetos", navProc: "Como trabalho", navAbout: "Sobre mim", navTalk: "Vamos conversar",
+    navAria: "Principal", langAria: "Idioma", navServ: "Serviços", navWhy: "Por quê", navProj: "Projetos", navProc: "Como trabalho", navAbout: "Sobre mim", navTalk: "Vamos conversar",
     kicker: "// Desenvolvedor de sistemas",
     h1: "Sistemas sob medida que organizam o seu negócio.",
     lead: "Sou Mario Alvarez. Desenvolvo sistemas de gestão, vendas e estoque para lojas e pequenas empresas: do login ao PDF do comprovante, funcionando no seu próprio domínio.",
@@ -555,7 +631,15 @@ var I18N = {
     s1t: "Sistemas de gestão", s1d: "Vendas, orçamentos, estoque, clientes, fornecedores e caixa em um só lugar, com usuários e permissões por perfil.",
     s2t: "Sites e landing pages", s2d: "Páginas rápidas, que ficam ótimas no celular e levam seus clientes direto ao WhatsApp ou a um formulário.",
     s3t: "Automação e relatórios", s3d: "Comprovantes e catálogos em PDF, scripts que eliminam tarefas repetitivas e relatórios que saem sozinhos.",
-    projK: "02 — Projetos", projH: "Sistemas reais, em produção",
+    whyK: "02 — Por que um sistema", whyH: "Menos tempo organizando, mais tempo vendendo", whyP: "Caderno, planilhas e mensagens soltas funcionam… até o negócio crescer. Um sistema sob medida reúne tudo em um só lugar e funciona do jeito que a sua loja funciona.",
+    w1t: "Recupere horas toda semana", w1d: "Cada venda atualiza estoque, caixa e saldo do cliente na hora. Chega de lançar a mesma coisa no caderno, na planilha e no WhatsApp.",
+    w2t: "Zero confusão no futuro", w2d: "Preços, estoque, dívidas e pagamentos ficam registrados com data e usuário. O que foi combinado hoje pode ser consultado daqui a um ano, sem discussão.",
+    w3t: "Responda seus clientes na hora", w3d: "Estoque, preço e orçamento em PDF em segundos, prontos para enviar pelo WhatsApp. Cliente que recebe resposta rápida é cliente que compra.",
+    w4t: "Seu dinheiro sempre claro", w4d: "Entradas, saídas, pagamentos parciais e contas de clientes e fornecedores em dia. Você sabe quanto entrou, quanto falta receber e quanto deve pagar.",
+    w5t: "Decida com dados, não no olho", w5d: "Relatórios do que vende, do que não vende e de quando repor. Você compra melhor, evita mercadoria parada e não perde vendas por falta de estoque.",
+    w6t: "Seu negócio cresce sem bagunça", w6d: "Cada funcionário com seu usuário e permissões, e você com acesso de qualquer lugar. Somar pessoas ou filiais não significa perder o controle.",
+    whyCtaH: "Você se reconhece em alguma dessas situações?", whyCtaP: "Me conte como o seu negócio funciona hoje e eu digo, sem compromisso, o que pode melhorar.", whyBtn: "Vamos falar do seu negócio",
+    projK: "03 — Projetos", projH: "Sistemas reais, em produção",
     erpShot: "[Captura do ERP — tela de vendas]", erpAlt: "Tela de estoque do sistema Barreiros", zoomOpen: "Ampliar captura do Barreiros", zoomClose: "Fechar", erpCat: "ERP para comércio",
     erpD: "Sistema de gestão completo para uma distribuidora de perfis e acessórios para serralheria de alumínio: vendas com pagamentos parciais e fiado, orçamentos, estoque, clientes e fornecedores com saldos, notas de crédito, movimentações de caixa e catálogo em PDF para enviar aos clientes.",
     erpB: ["Usuários com perfis e permissões por página", "Comprovantes e catálogo gerados em PDF", "Publicado em domínio próprio, atrás do Cloudflare"],
@@ -565,7 +649,7 @@ var I18N = {
     thorD: "Landing page para uma loja de informática e segurança que instala câmeras, fechaduras eletrônicas e controles de acesso para condomínios. Apresenta seus serviços de forma clara e leva o visitante direto ao contato.",
     thorB: ["Seções de serviços, tecnologia e contato", "Botão flutuante de WhatsApp para consultas rápidas", "Acesso direto às redes sociais e ao e-mail"],
     thorAlt: "Página inicial da Thor Computación", thorZoom: "Ampliar captura da Thor Computación",
-    procK: "03 — Como trabalho", procH: "Da ideia ao sistema funcionando", step: "Passo",
+    procK: "04 — Como trabalho", procH: "Da ideia ao sistema funcionando", step: "Passo",
     steps: [
       ["Conversa inicial", "Entendo como seu negócio funciona hoje e o que está tomando seu tempo."],
       ["Proposta clara", "Módulos, prazos e preço por escrito, antes de escrever uma linha de código."],
@@ -573,7 +657,7 @@ var I18N = {
       ["Publicação e suporte", "Deixo funcionando no seu domínio e continuo disponível para ajustes e novos módulos."]
     ],
     photoRole: "Desenvolvedor de sistemas",
-    aboutK: "04 — Sobre mim", aboutH: "Sistemas feitos para durar",
+    aboutK: "05 — Sobre mim", aboutH: "Sistemas feitos para durar",
     aboutP1: "Sou desenvolvedor de sistemas, especializado em criar soluções sob medida para o seu negócio. Em cada projeto, priorizo que seus dados estejam seguros, que o sistema seja confiável, preciso e preparado para crescer com você. Além disso, busco que seja intuitivo e confortável de usar, para que você e sua equipe trabalhem de forma organizada desde o primeiro dia.",
     aboutP2: "Falo espanhol, inglês e português, então posso trabalhar com clientes e equipes onde quer que estejam.",
     ctaH: "Tem um projeto em mente?", ctaP: "Conte o que você precisa e eu respondo com uma proposta em menos de [48 h].",
