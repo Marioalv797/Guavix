@@ -197,6 +197,7 @@ a{color:#34D399}a:hover{color:#6EE7B7}
   .main-nav .nav-cta{text-align:center;margin:4px;padding:14px 20px !important;font-size:16px !important}
 }
 @media (prefers-reduced-motion: reduce){.burger span{transition:none}.main-nav.open{animation:none}}
+@media (max-width: 640px){.foot{grid-template-columns:1fr !important;justify-items:center;gap:8px !important;text-align:center}.foot-spacer{display:none}}
 </style>
 </helmet>
 <div lang="{{lang}}" style="--acc: {{accent}}; background: #0A1628; color: #E8EEF5; font-family: Inter, system-ui, sans-serif; min-height: 100vh">
@@ -521,10 +522,10 @@ a{color:#34D399}a:hover{color:#6EE7B7}
   </section>
 
   <footer style="border-top: 1px solid #172B44">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 16px; align-items: center; font-size: 14px; color: #8EA0B4">
+    <div class="foot" style="max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 16px; align-items: center; font-size: 14px; color: #8EA0B4">
       <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #FFFFFF">guavix<span style="color: {{accent}}">.</span></span>
       <span style="text-align: center">{{t.rights}}</span>
-      <span aria-hidden="true"></span>
+      <span class="foot-spacer" aria-hidden="true"></span>
     </div>
   </footer>
 
