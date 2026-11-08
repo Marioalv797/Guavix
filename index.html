@@ -170,13 +170,14 @@ a{color:#34D399}a:hover{color:#6EE7B7}
 .send{transition:transform .2s ease,filter .2s ease}
 .send:hover{filter:brightness(1.08)}
 .send:active{transform:scale(.98)}
-.photo-frame{transition:transform .55s cubic-bezier(.22,1,.36,1)}
-.photo-img{transition:transform .55s cubic-bezier(.22,1,.36,1),box-shadow .55s cubic-bezier(.22,1,.36,1),border-color .3s ease}
-.photo-zoom{transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.photo-frame,.photo-img,.photo-zoom,.photo-alt{will-change:transform,opacity;backface-visibility:hidden}
+.photo-frame{transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.photo-img{transition:transform .7s cubic-bezier(.22,1,.36,1),box-shadow .7s cubic-bezier(.22,1,.36,1),border-color .4s ease}
+.photo-zoom{transition:transform .9s cubic-bezier(.22,1,.36,1)}
 .photo:hover .photo-frame{transform:translate(-10px,-10px)}
-.photo:hover .photo-img{transform:translate(4px,4px) rotate(-1.5deg);box-shadow:0 26px 56px rgba(0,0,0,.5);border-color:var(--acc) !important}
-.photo:hover .photo-zoom{transform:scale(1.06)}
-.photo-alt{opacity:0;transition:opacity .45s ease}
+.photo:hover .photo-img{transform:translate(4px,4px) rotate(-1deg);box-shadow:0 26px 56px rgba(0,0,0,.5);border-color:var(--acc) !important}
+.photo:hover .photo-zoom{transform:scale(1.04)}
+.photo-alt{opacity:0;transition:opacity .7s cubic-bezier(.4,0,.2,1)}
 .photo:hover .photo-alt{opacity:1}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.shot{transition:border-color .2s ease}.shot:hover{transform:none}.photo-frame,.photo-img,.photo-zoom,.svc,.svc svg{transition:border-color .2s ease}.svc:hover,.svc:hover svg{transform:none}.photo:hover .photo-frame,.photo:hover .photo-img,.photo:hover .photo-zoom{transform:none}}
 </style>
