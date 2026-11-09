@@ -186,17 +186,19 @@ a{color:#34D399}a:hover{color:#6EE7B7}
 .nav-toggle.open .burger span:nth-child(1){top:6px;transform:rotate(45deg)}
 .nav-toggle.open .burger span:nth-child(2){opacity:0}
 .nav-toggle.open .burger span:nth-child(3){top:6px;transform:rotate(-45deg)}
-@keyframes menuIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 @media (max-width: 1080px){
+  .site-header{row-gap:0 !important}
   .nav-toggle{display:inline-flex !important}
-  .main-nav{display:none !important}
-  .main-nav.open{display:flex !important;flex:1 1 100%;flex-direction:column;align-items:stretch !important;gap:4px !important;background:#0F2036;border:1px solid #1F3550;border-radius:16px;padding:10px;animation:menuIn .3s cubic-bezier(.22,1,.36,1) both}
+  .main-nav{display:flex !important;flex:1 1 100%;flex-direction:column;align-items:stretch !important;gap:4px !important;background:#0F2036;border:1px solid transparent;border-radius:16px;padding:0 10px;margin-top:0;max-height:0;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:max-height .45s cubic-bezier(.22,1,.36,1),padding .45s cubic-bezier(.22,1,.36,1),margin-top .45s cubic-bezier(.22,1,.36,1),opacity .3s ease,transform .45s cubic-bezier(.22,1,.36,1),border-color .3s ease,visibility 0s linear .45s}
+  .main-nav.open{max-height:400px;padding:10px;margin-top:16px;opacity:1;visibility:visible;transform:none;border-color:#1F3550;
+    transition:max-height .5s cubic-bezier(.22,1,.36,1),padding .5s cubic-bezier(.22,1,.36,1),margin-top .5s cubic-bezier(.22,1,.36,1),opacity .35s ease .05s,transform .5s cubic-bezier(.22,1,.36,1),border-color .3s ease,visibility 0s}
   .main-nav .nav-link{font-size:17px !important;padding:14px 14px !important;border-radius:10px;background-image:none}
   .main-nav .nav-link:hover{background-color:#17304D}
   .main-nav .nav-lang{align-self:flex-start;margin:8px 4px 4px !important}
   .main-nav .nav-cta{text-align:center;margin:4px;padding:14px 20px !important;font-size:16px !important}
 }
-@media (prefers-reduced-motion: reduce){.burger span{transition:none}.main-nav.open{animation:none}}
+@media (prefers-reduced-motion: reduce){.burger span,.main-nav{transition:none !important}}
 @media (max-width: 640px){.foot{grid-template-columns:1fr !important;justify-items:center;gap:8px !important;text-align:center}.foot-spacer{display:none}}
 .shot-frame{transition:transform .6s cubic-bezier(.22,1,.36,1)}
 .shot-wrap:hover .shot-frame{transform:translate(-4px,-4px)}
@@ -205,14 +207,13 @@ a{color:#34D399}a:hover{color:#6EE7B7}
 </helmet>
 <div lang="{{lang}}" style="--acc: {{accent}}; background: #0A1628; color: #E8EEF5; font-family: Inter, system-ui, sans-serif; min-height: 100vh">
 
-  <header style="max-width: 1200px; margin: 0 auto; padding: 24px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+  <header class="site-header" style="max-width: 1200px; margin: 0 auto; padding: 24px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
     <a href="#inicio" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.5px; color: #FFFFFF; text-decoration: none">guavix<span style="color: {{accent}}">.</span></a>
     <button type="button" class="nav-toggle {{menuCls}}" aria-expanded="{{menuExp}}" aria-controls="menu-principal" aria-label="{{t.menuAria}}" onClick="{{toggleMenu}}" style="display: none; width: 46px; height: 46px; border: 1px solid #1F3550; border-radius: 10px; background: #0F2036; color: #FFFFFF; cursor: pointer; align-items: center; justify-content: center; padding: 0">
       <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
     </button>
     <nav id="menu-principal" class="main-nav {{menuCls}}" aria-label="{{t.navAria}}" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
       <a href="#servicios" class="nav-link" onClick="{{closeMenu}}" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navServ}}</a>
-      <a href="#por-que" class="nav-link" onClick="{{closeMenu}}" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navWhy}}</a>
       <a href="#proyectos" class="nav-link" onClick="{{closeMenu}}" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navProj}}</a>
       <a href="#proceso" class="nav-link" onClick="{{closeMenu}}" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navProc}}</a>
       <a href="#sobre-mi" class="nav-link" onClick="{{closeMenu}}" style="color: #C5D1DE; text-decoration: none; font-size: 15px; padding: 12px 12px">{{t.navAbout}}</a>
