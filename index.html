@@ -198,6 +198,9 @@ a{color:#34D399}a:hover{color:#6EE7B7}
 }
 @media (prefers-reduced-motion: reduce){.burger span{transition:none}.main-nav.open{animation:none}}
 @media (max-width: 640px){.foot{grid-template-columns:1fr !important;justify-items:center;gap:8px !important;text-align:center}.foot-spacer{display:none}}
+.shot-frame{transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.shot-wrap:hover .shot-frame{transform:translate(-4px,-4px)}
+@media (prefers-reduced-motion: reduce){.shot-frame{transition:none}.shot-wrap:hover .shot-frame{transform:none}}
 </style>
 </helmet>
 <div lang="{{lang}}" style="--acc: {{accent}}; background: #0A1628; color: #E8EEF5; font-family: Inter, system-ui, sans-serif; min-height: 100vh">
@@ -374,9 +377,12 @@ a{color:#34D399}a:hover{color:#6EE7B7}
       </div>
 
       <article style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; background: #10233B; border: 1px solid #1F3550; border-radius: 20px; padding: 32px">
-        <button type="button" class="shot" aria-label="{{t.zoomOpen}}" onClick="{{openZoomErp}}" style="--acc: {{accent}}; flex: 1 1 420px; min-width: 0; aspect-ratio: 1920 / 914; padding: 0; background: #F5F7FD; border-radius: 12px; border: 1px solid #1F3550; display: block; cursor: zoom-in">
-          <img src="./assets/0f039bc3bb2e1b4c0b2c4a3ab2bcf4c4.jpg" alt="{{t.erpAlt}}" style="width: 100%; height: 100%; object-fit: cover; display: block">
-        </button>
+        <div class="shot-wrap" style="--acc: {{accent}}; position: relative; flex: 1 1 420px; min-width: 0; padding: 0 14px 14px 0">
+          <div class="shot-frame" aria-hidden="true" style="position: absolute; top: 14px; left: 14px; right: 0; bottom: 0; border: 2px solid {{accent}}; border-radius: 14px"></div>
+          <button type="button" class="shot" aria-label="{{t.zoomOpen}}" onClick="{{openZoomErp}}" style="--acc: {{accent}}; width: 100%; aspect-ratio: 1920 / 914; padding: 0; background: #F5F7FD; border-radius: 12px; border: 1px solid #1F3550; display: block; cursor: zoom-in">
+            <img src="./assets/0f039bc3bb2e1b4c0b2c4a3ab2bcf4c4.jpg" alt="{{t.erpAlt}}" style="width: 100%; height: 100%; object-fit: cover; display: block">
+          </button>
+        </div>
         <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
           <div class="ttl" style="align-self: flex-start; display: flex; flex-direction: column; align-items: center; gap: 2px">
             <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 30px; line-height: 34px; color: #FFFFFF">Barreiros</h3>
@@ -400,15 +406,21 @@ a{color:#34D399}a:hover{color:#6EE7B7}
             <sc-for list="{{t.celB}}" as="b" hint-placeholder-count="3"><li>{{b}}</li></sc-for>
           </ul>
         </div>
-        <button type="button" class="shot" aria-label="{{t.celZoom}}" onClick="{{openZoomCel}}" style="--acc: {{accent}}; flex: 1 1 420px; min-width: 0; aspect-ratio: 1904 / 910; padding: 0; background: #F5F7FD; border-radius: 12px; border: 1px solid #1F3550; display: block; cursor: zoom-in">
-          <img src="./assets/9e4fbc0327805727b09b0987831b6b7e.jpg" alt="{{t.celAlt}}" style="width: 100%; height: 100%; object-fit: cover; display: block">
-        </button>
+        <div class="shot-wrap" style="--acc: {{accent}}; position: relative; flex: 1 1 420px; min-width: 0; padding: 0 14px 14px 0">
+          <div class="shot-frame" aria-hidden="true" style="position: absolute; top: 14px; left: 14px; right: 0; bottom: 0; border: 2px solid {{accent}}; border-radius: 14px"></div>
+          <button type="button" class="shot" aria-label="{{t.celZoom}}" onClick="{{openZoomCel}}" style="--acc: {{accent}}; width: 100%; aspect-ratio: 1904 / 910; padding: 0; background: #F5F7FD; border-radius: 12px; border: 1px solid #1F3550; display: block; cursor: zoom-in">
+            <img src="./assets/9e4fbc0327805727b09b0987831b6b7e.jpg" alt="{{t.celAlt}}" style="width: 100%; height: 100%; object-fit: cover; display: block">
+          </button>
+        </div>
       </article>
 
       <article style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; background: #10233B; border: 1px solid #1F3550; border-radius: 20px; padding: 32px">
-        <button type="button" class="shot" aria-label="{{t.thorZoom}}" onClick="{{openZoomThor}}" style="--acc: {{accent}}; flex: 1 1 420px; min-width: 0; aspect-ratio: 1903 / 908; padding: 0; background: #FFFFFF; border-radius: 12px; border: 1px solid #1F3550; display: block; cursor: zoom-in">
-          <img src="./assets/625ee54e1b28c452271138215a434826.jpg" alt="{{t.thorAlt}}" style="width: 100%; height: 100%; object-fit: cover; display: block">
-        </button>
+        <div class="shot-wrap" style="--acc: {{accent}}; position: relative; flex: 1 1 420px; min-width: 0; padding: 0 14px 14px 0">
+          <div class="shot-frame" aria-hidden="true" style="position: absolute; top: 14px; left: 14px; right: 0; bottom: 0; border: 2px solid {{accent}}; border-radius: 14px"></div>
+          <button type="button" class="shot" aria-label="{{t.thorZoom}}" onClick="{{openZoomThor}}" style="--acc: {{accent}}; width: 100%; aspect-ratio: 1903 / 908; padding: 0; background: #FFFFFF; border-radius: 12px; border: 1px solid #1F3550; display: block; cursor: zoom-in">
+            <img src="./assets/625ee54e1b28c452271138215a434826.jpg" alt="{{t.thorAlt}}" style="width: 100%; height: 100%; object-fit: cover; display: block">
+          </button>
+        </div>
         <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
           <div class="ttl" style="align-self: flex-start; display: flex; flex-direction: column; align-items: center; gap: 2px">
             <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 30px; line-height: 34px; color: #FFFFFF">Thor Computación</h3>
