@@ -145,6 +145,8 @@ a{color:#34D399}a:hover{color:#6EE7B7}
 .nav-link:hover{color:#FFFFFF !important;background-size:100% 2px}
 .lang-btn[aria-pressed="false"]:hover{background:#17304D !important}
 @media (prefers-reduced-motion: reduce){.btn-pri,.btn-sec,.nav-link{transition:none}.btn-pri:hover,.btn-sec:hover,.btn-pri:active,.btn-sec:active{transform:none}}
+.send.btn-send{transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s ease}
+.send.btn-send:hover,.send.btn-send:focus-visible{background:#062016 !important;color:var(--acc) !important;border-color:var(--acc) !important;filter:none}
 .btn-cta,.btn-cta-out{transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s ease,background-color .2s ease,color .2s ease}
 .btn-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px rgba(6,32,22,.6)}
 .btn-cta-out:hover{transform:translateY(-2px);background-color:#0A1628 !important;color:#FFFFFF !important}
@@ -542,7 +544,7 @@ a{color:#34D399}a:hover{color:#6EE7B7}
               </sc-if>
               <div style="display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between">
                 <p style="margin: 0; font-size: 13px; color: #8EA0B4; flex: 1 1 240px">{{t.fNote}}</p>
-                <button type="submit" class="send btn-pri" style="min-height: 52px; padding: 0 28px; border: 0; border-radius: 12px; background: {{accent}}; color: #062016; font: inherit; font-size: 16px; font-weight: 600; cursor: pointer">{{t.fSend}}</button>
+                <button type="submit" class="send btn-pri btn-send" style="min-height: 52px; padding: 0 28px; border: 2px solid {{accent}}; border-radius: 12px; background: {{accent}}; color: #062016; font: inherit; font-size: 16px; font-weight: 600; cursor: pointer">{{t.fSend}}</button>
               </div>
             </form>
           </sc-if>
